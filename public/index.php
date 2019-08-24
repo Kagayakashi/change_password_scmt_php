@@ -8,17 +8,12 @@
 require_once __DIR__ . '/../i_custom.cfg';
 
 // Логин
-// $lgn = 'sim.test';
-// Текущий пароль
-// $pwd = 'zYzx3zxxzxx';
-// Новый пароль
-// $pwd_new = 'zYzx3zxНzxР';
-// Идентификатор пользователя в системе
-// $uid = 1230;
-
 $lgn = '';
+// Текущий пароль
 $pwd = '';
+// Новый пароль
 $pwd_new = '';
+// Идентификатор пользователя в системе
 $uid = 0;
 
 // Запуск процедуры
@@ -85,8 +80,8 @@ function scmt_logout( $uid )
 function scmt_structure( $scm_type, $scmt_body )
 {
 	// Сформировать header и body для отправки SCMT
-	$iid = hexdec( I_CFG['sys_iid'] );
-	$cid = hexdec( I_CFG['sys_cid'] );
+	$iid = hexdec( $i_cfg['sys_iid'] );
+	$cid = hexdec( $i_cfg['sys_cid'] );
 
 	if( $scm_type == 9012 || $scm_type == 9016 ) { $uid = $scmt_body['uid']; }
 	else{ $uid = 0; }
@@ -154,7 +149,7 @@ function send( $scm )
 {
 	$body = serialize( $scm );
 
-	$url = I_CFG['sys_url'];
+	$url = $i_cfg['sys_url'];
 	// Заголовок
 	$header = array
 	(
