@@ -3,4 +3,5 @@
 Ядро принимает SCMT(System Core Message Type) для обработки.
 
 Copyright Simourg 2019-*. All rights reserved.
+
 Author: Vyacheslav Odinokov
